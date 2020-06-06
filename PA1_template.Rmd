@@ -117,8 +117,9 @@ dataset[, `weekday or weekend` := as.factor(`weekday or weekend`)]
 head(dataset)
 
 IntervalDT<- dataset[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval, `weekday or weekend`)] 
+
 ```
-Note : to make the panel plot i used this and when i run it it works fine but when i knit it to html i get an error "impossible to find function ggplot" 
+Note : to make the panel plot i used this and when i run it it works fine but when i knit it to html i get an error "impossible to find function ggplot", you can find the panel plot in the png file "panelplot.png"  
 
 ggplot(IntervalDT, aes(x = interval , y = steps, color=`weekday or weekend`)) + geom_line() + labs(title = "Avg. Daily Steps by Weektype", x = "Interval", y = "No. of Steps") + facet_wrap(~`weekday or weekend` , ncol = 1, nrow=2) 
 

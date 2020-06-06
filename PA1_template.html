@@ -485,7 +485,7 @@ head(dataset)</code></pre>
 ## 5:     0 2012-10-01       20       10641       lundi            weekday
 ## 6:     2 2012-10-01       25       10641       lundi            weekday</code></pre>
 <pre class="r"><code>IntervalDT&lt;- dataset[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c(&quot;steps&quot;), by = .(interval, `weekday or weekend`)] </code></pre>
-<p>Note : to make the panel plot i used this and when i run it it works fine but when i knit it to html i get an error “impossible to find function ggplot”</p>
+<p>Note : to make the panel plot i used this and when i run it it works fine but when i knit it to html i get an error “impossible to find function ggplot”, you can find the panel plot in the png file “panelplot.png”</p>
 <p>ggplot(IntervalDT, aes(x = interval , y = steps, color=<code>weekday or weekend</code>)) + geom_line() + labs(title = “Avg. Daily Steps by Weektype”, x = “Interval”, y = “No. of Steps”) + facet_wrap(~<code>weekday or weekend</code> , ncol = 1, nrow=2)</p>
 </div>
 
